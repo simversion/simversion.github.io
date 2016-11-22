@@ -1,14 +1,15 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<meta charset="utf-8">
+  <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-	<title>SimVersion</title>
+  <title>SimVersion</title>
   <meta name="description" content="A simple, pragmatic versioning convention. A simple alternative to SemVer.">
+  
 	<link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="//raw.githubusercontent.com/simversion/simversion.github.io/master/style.css">
 </head>
 
 <body>
@@ -22,11 +23,11 @@
 
 <p>In a sense, this is a subset of <a href="http://semver.org/">SemVer</a>, but with slightly different semantics.</p>
 
-<h2><a id="user-content-series" class="anchor" href="#series" aria-hidden="true"><svg aria-hidden="true" class="octicon octicon-link" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Series</h2>
+<h2><a name="series" aria-hidden="true"></a>Series</h2>
 
 <p>An API has two series of releases: feature-complete, and feature-incomplete.</p>
 
-<h3><a id="user-content-feature-incomplete" class="anchor" href="#feature-incomplete" aria-hidden="true"><svg aria-hidden="true" class="octicon octicon-link" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Feature-incomplete</h3>
+<h3><a name="feature-incomplete" aria-hidden="true"></a>Feature-incomplete</h3>
 
 <p>Feature-incomplete releases use a version numbering scheme <code>0.MAJOR.UPDATE</code>, where:</p>
 
@@ -51,7 +52,7 @@
 <p>Note that, because the <code>0.x</code> series is by definition feature-incomplete, the addition of new features is expected, and
 therefore is not indicated any differently from any other change.</p>
 
-<h3><a id="user-content-feature-complete" class="anchor" href="#feature-complete" aria-hidden="true"><svg aria-hidden="true" class="octicon octicon-link" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Feature-complete</h3>
+<h3><a name="feature-complete" aria-hidden="true"></a>Feature-complete</h3>
 
 <p>The first feature-complete release is indicated by the release of version <code>1.0.0</code>.</p>
 
@@ -78,7 +79,7 @@ therefore is not indicated any differently from any other change.</p>
 <li><code>2.0.0</code> is the next incompatible release with breaking changes</li>
 </ul>
 
-<h2><a id="user-content-guidelines" class="anchor" href="#guidelines" aria-hidden="true"><svg aria-hidden="true" class="octicon octicon-link" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Guidelines</h2>
+<h2><a name="guide" aria-hidden="true"></a>Guidelines</h2>
 
 <p>Every release, whether or not it's feature-complete, is considered "stable", in the sense
 that it's expected to work - in terms of source-control, an unstable release should <em>never</em>
@@ -110,7 +111,7 @@ your public API.</p>
 (and other source elements) that have been <em>explicitly</em> marked as implementation details intended
 for internal use only, e.g. with a formal annotation or doc-block.</p>
 
-<h2><a id="user-content-differences-from-semver" class="anchor" href="#differences-from-semver" aria-hidden="true"><svg aria-hidden="true" class="octicon octicon-link" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Differences from SemVer</h2>
+<h2><a name="semver" aria-hidden="true"></a>Differences from SemVer</h2>
 
 <p>This convention uses two distinct release series with slightly different semantics and scope,
 which match the caret operator for version constraints, e.g. as implemented by package management
