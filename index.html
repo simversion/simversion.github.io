@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<title>SimVersion</title>
+  <meta name="description" content="A simple, pragmatic versioning convention. A simple alternative to SemVer.">
+	<link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header class="wrapper-large ta-center">
+  <h1>SimVersion</h1>
+  <p>A simple, pragmatic versioning convention.</p>
+</header>
+
+<section class="wrapper"><article>
+
+<p>In a sense, this is a subset of <a href="http://semver.org/">SemVer</a>, but with slightly different semantics.</p>
+
+<h2><a id="user-content-series" class="anchor" href="#series" aria-hidden="true"><svg aria-hidden="true" class="octicon octicon-link" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Series</h2>
+
+<p>An API has two series of releases: feature-complete, and feature-incomplete.</p>
+
+<h3><a id="user-content-feature-incomplete" class="anchor" href="#feature-incomplete" aria-hidden="true"><svg aria-hidden="true" class="octicon octicon-link" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Feature-incomplete</h3>
+
+<p>Feature-incomplete releases use a version numbering scheme <code>0.MAJOR.UPDATE</code>, where:</p>
+
+<ul>
+<li><code>0</code> indicates a feature-incomplete release</li>
+<li><code>MAJOR</code> increases for releases with <em>breaking</em> changes</li>
+<li><code>UPDATE</code> increases for releases with <em>compatible</em> changes</li>
+</ul>
+
+<p>Increase of the <code>MAJOR</code> version number indicates backwards-incompatible API changes.</p>
+
+<p>Increase of the <code>UPDATE</code> number indicates any other minor change, e.g. bugfixes, new compatible features, documentation updates, etc.</p>
+
+<p>Example:</p>
+
+<ul>
+<li><code>0.1.0</code> is the initial, incomplete release</li>
+<li><code>0.1.1</code> is the next compatible, still-incomplete release</li>
+<li><code>0.2.0</code> is the next incompatible, still-incomplete release</li>
+</ul>
+
+<p>Note that, because the <code>0.x</code> series is by definition feature-incomplete, the addition of new features is expected, and
+therefore is not indicated any differently from any other change.</p>
+
+<h3><a id="user-content-feature-complete" class="anchor" href="#feature-complete" aria-hidden="true"><svg aria-hidden="true" class="octicon octicon-link" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Feature-complete</h3>
+
+<p>The first feature-complete release is indicated by the release of version <code>1.0.0</code>.</p>
+
+<p>Feature-complete releases use a version numbering scheme <code>MAJOR.MINOR.PATCH</code>, where:</p>
+
+<ul>
+<li><code>MAJOR</code> increases for releases with <em>breaking</em> changes</li>
+<li><code>MINOR</code> increases for releases introducing <em>new features</em></li>
+<li><code>PATCH</code> increases for releases with <em>compatible</em> changes</li>
+</ul>
+
+<p>Increase of the <code>MAJOR</code> version number indicates backwards-incompatible API changes.</p>
+
+<p>Increase of the <code>MINOR</code> version number indicates compatible API changes introducing <em>new features</em>.</p>
+
+<p>Increase of the <code>PATCH</code> number indicates any other minor change, e.g. bugfixes, documentation updates, etc.</p>
+
+<p>Example:</p>
+
+<ul>
+<li><code>1.0.0</code> is the first feature-complete release</li>
+<li><code>1.0.1</code> is the next compatible release with minor changes or bugfixes</li>
+<li><code>1.1.0</code> is the next compatible release introducing new features</li>
+<li><code>2.0.0</code> is the next incompatible release with breaking changes</li>
+</ul>
+
+<h2><a id="user-content-guidelines" class="anchor" href="#guidelines" aria-hidden="true"><svg aria-hidden="true" class="octicon octicon-link" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Guidelines</h2>
+
+<p>Every release, whether or not it's feature-complete, is considered "stable", in the sense
+that it's expected to work - in terms of source-control, an unstable release should <em>never</em>
+be tagged, but may exist on a pre-release branch, until it's ready for release.</p>
+
+<p>The <code>0.x</code> release series indicates that the API is still incomplete and doesn't yet include
+or support all of the planned features. Increase the version number to <code>1.0.0</code> when the API
+is feature-complete.</p>
+
+<p><em>Always</em> increase the <code>MAJOR</code> version number for any breaking change, regardless of whether the
+release is feature-complete or not.</p>
+
+<p><em>Never</em> increase the <code>MAJOR</code> version number for backwards-compatible changes.</p>
+
+<p>The initial <code>1.0.0</code> release <em>may</em> have breaking changes - your change log should indicate if it does.</p>
+
+<p>Deprecation is a minor change. Removal is a breaking change.</p>
+
+<p>Accidental release of a breaking change with a minor version number increase must be corrected
+by an immediate minor release reverting the change, and a subsequent <code>MAJOR</code> release.</p>
+
+<p>A major update to an external dependency imported by your package does not automatically lead
+to a major version increase in your package - while it could lead to blockage (in a package
+with a conflicting version constraint for the same external dependency) it doesn't always,
+for example, if changes to an external dependency do <em>not</em> result in any breaking changes to
+your public API.</p>
+
+<p>Breaking changes to <em>internal</em> APIs with a minor version increase are permitted, for classes
+(and other source elements) that have been <em>explicitly</em> marked as implementation details intended
+for internal use only, e.g. with a formal annotation or doc-block.</p>
+
+<h2><a id="user-content-differences-from-semver" class="anchor" href="#differences-from-semver" aria-hidden="true"><svg aria-hidden="true" class="octicon octicon-link" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Differences from SemVer</h2>
+
+<p>This convention uses two distinct release series with slightly different semantics and scope,
+which match the caret operator for version constraints, e.g. as implemented by package management
+tools such as <a href="https://getcomposer.org/">Composer</a> and <a href="https://www.npmjs.com/">npm</a>.</p>
+
+<p>Unlike SemVer, the feature-incomplete <code>0.x</code> series does <em>not</em> allow breaking changes from <code>0.1.0</code>
+to <code>0.1.1</code> - in practice, this is generally how the caret <code>^</code> operator version constraint works
+with most package managers, e.g. in <code>composer.json</code> with Composer and <code>package.json</code> with npm.</p>
+
+<p>This convention does not permit the use of pre-release identifiers, as in <code>1.0.0-alpha</code>, etc. -
+the notion of pre-releases is outside the scope of this convention, which recognizes that this
+problem can solved in a number of ways, for example (typically) by treating e.g. a <code>1.0.0</code> <em>branch</em>
+(under source-control) as a pre-release, and a <code>1.0.0</code> <em>tag</em> as a release.</p>
+
+</article></section>
+
+<footer class="grid wrapper">
+  <div class="copyright">
+    Author: <a href="https://github.com/mindplay" target="_blank">Rasmus Schultz</a>
+  </div>
+  <div class="ta-right">
+    <a href="https://spdx.org/licenses/MIT" target="_blank">MIT</a>
+    |
+    <a href="https://github.com/simversion/simversion.github.io" target="_blank">Fork it on GitHub</a>
+  </div>
+</footer>
+
+</body>
+
+</html>
