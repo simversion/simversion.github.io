@@ -22,9 +22,7 @@
 
 <section class="wrapper"><article>
 
-<h3>What is it?</h3>
-
-<p>In a sense, this is a subset of <a href="http://semver.org/">SemVer</a>, but with slightly different semantics.</p>
+<p>This document describes a convention for versioning, under source-control, with package managers.</p>
 
 <h2><a name="series" aria-hidden="true"></a>Series</h2>
 
@@ -114,7 +112,11 @@ your public API.</p>
 (and other source elements) that have been <em>explicitly</em> marked as implementation details intended
 for internal use only, e.g. with a formal annotation or doc-block.</p>
 
-<h2><a name="semver" aria-hidden="true"></a>Differences from SemVer</h2>
+<hr/>
+
+<h2><a name="semver" aria-hidden="true"></a>Relationship with SemVer</h2>
+
+<p>In a sense, this is a subset of <a href="http://semver.org/">SemVer</a>, but with slightly different semantics.</p>
 
 <p>This convention uses two distinct release series with slightly different semantics and scope,
 which match the caret operator for version constraints, e.g. as implemented by package management
